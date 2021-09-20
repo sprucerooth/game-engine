@@ -1,0 +1,23 @@
+spelmotorn
+
+
+double för collision desired dist och return type
+
+checkcollision varje gång ett objekt skapas
+
+// med detta så fastnar den på båda hörnen
+
+    if (xMove > 0) xMove = returnCollisionDistanceRight(this, (int) xMove);
+    else if (xMove < 0) xMove = returnCollisionDistanceLeft(this, (int) xMove);
+
+// med detta så teleportar den från vänster hörn till höger hörn direkt
+
+    if (xMove > 0) xMove = returnCollisionDistanceRight(this, (int) xMove);
+    if (xMove < 0) xMove = returnCollisionDistanceLeft(this, (int) xMove);
+
+
+/*
+        return allEntities.stream()
+                .filter(e2 -> !e2.equals(e) && e.wouldCollideWith(e2, desiredDist))
+                .mapToInt(e2 -> e.downDistanceTo(e2) - 1).filter(i -> i < desiredDist)
+        .min().orElse(desiredDist);*/
